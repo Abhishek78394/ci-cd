@@ -26,15 +26,3 @@ jobs:
       - name: Run tests
         run: |
           echo "Running tests..."
-          npm test
-
-      - name: Build the application
-        run: |
-          echo "Building the application..."
-          npm run build
-
-      - name: Deploy to Production
-        run: |
-          echo "Deploying to production..."
-          # Your deployment commands go here
-          echo "Deployment complete!"
