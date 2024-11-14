@@ -1,0 +1,40 @@
+name: CI/CD for Master Branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Choose your preferred OS (e.g., ubuntu-latest, windows-latest)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies..."
+          npm install
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          npm test
+
+      - name: Build the application
+        run: |
+          echo "Building the application..."
+          npm run build
+
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to production..."
+          # Your deployment commands go here
+          echo "Deployment complete!"
