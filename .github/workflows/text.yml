@@ -3,13 +3,13 @@ name: CI/CD for Master Branch
 on:
   push:
     branches:
-      - master
+      - master  # Triggers the workflow on pushes to the master branch
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Choose your preferred OS (e.g., ubuntu-latest, windows-latest)
+    runs-on: ubuntu-latest  # Runs on an Ubuntu environment, you can use windows-latest, macos-latest, etc.
 
     steps:
       - name: Run tests
         run: |
-          echo "Running tests..."
+          echo "Running tests..."  # Prints "Running tests..." to the console during the workflow
